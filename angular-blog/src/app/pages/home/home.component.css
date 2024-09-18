@@ -1,0 +1,9 @@
+.container__articles{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.articles_others{
+  color: brown;
+}
