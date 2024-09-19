@@ -1,13 +1,19 @@
 .container__small-card{
-  border: 1px solid;
   width: 700px;
   height: 200px;
-  display: flex;
-  flex-direction: row;
   margin-right: 20px ;
+  margin-bottom: 10px;
 }
 
-.small__cart-photo >img{
+.container__small-card-content{
+  display: flex;
+  flex-direction: row;
+}
+
+.small__cart-photo > img{
+  width: 170px;
+  min-width: 200px;
+  height: 150px;
   margin-right: 20px;
 }
 
@@ -16,3 +22,5 @@
   justify-items: center;
   align-items: center;
 }
+
+
