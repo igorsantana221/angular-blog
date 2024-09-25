@@ -1,4 +1,4 @@
-import { Component, Input, input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-big-card',
@@ -7,16 +7,13 @@ import { Component, Input, input, OnInit } from '@angular/core';
   templateUrl: './big-card.component.html',
   styleUrl: './big-card.component.css'
 })
-export class BigCardComponent implements OnInit{
+export class BigCardComponent{
 
   @Input()
   photoCover:string = ""
   @Input()
   cardTitle:string = ""
   @Input()
-  cardDescription:string = "Marvel Studio anuncia mais novo movie para o cinema no brasil."
+  cardDescription:string = ""
 
-    ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 }

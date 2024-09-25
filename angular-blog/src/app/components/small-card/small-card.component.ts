@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-small-card',
@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './small-card.component.html',
   styleUrl: './small-card.component.css'
 })
-export class SmallCardComponent {
+export class SmallCardComponent  {
+
+  @Input()
+  photoCover:string = ""
+  @Input()
+  cardTitle:string = ""
+
+
 
 }
