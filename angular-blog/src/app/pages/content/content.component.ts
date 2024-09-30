@@ -1,5 +1,7 @@
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, ActivationEnd, Router, RouterLink } from '@angular/router';
+import { dataFake } from '../../data/dataFake'
 
 @Component({
   selector: 'app-content',
@@ -9,8 +11,28 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './content.component.css'
 })
 export class ContentComponent {
-  photoCover:string = "https://turnmundonerd.com.br/wp-content/uploads/2020/11/tony-stark-182303-1280x0-1-850x560.jpg"
-  contentTitle:string = "MINHA NOTICIAS"
-  contentDescription:string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem dolore dicta velit dolor aspernatur, illo eveniet illum quasi! Vero, provident quis distinctio enim exercitationem dolores laudantium quae veritatis corporis. Cum."
-  
+  photoCover:string = ""
+  contentTitle:string = ""
+  contentDescription:string = ""
+  private id: any
+  constructor(
+    private route:ActivatedRoute
+  ){}
+
+  ngOnInit():void{
+    this.route.paramMap.subscribe( value =>
+      this.id = value.get("id"))
+
+      this.setValuesToComponent(this.id)
+  }
+
+  setValuesToComponent(id:any ){
+    const result = dataFake.filter(article => article.id == id)[0]
+
+    this.contentTitle = result.title,
+    this.photoCover = result.photoCover,
+    this.contentDescription = result.description
+
+  }
+
 }
